@@ -1,14 +1,19 @@
 # HwAwareProb
 Repository for the paper "Towards Hardware-Aware Tractable Learning of Probabilistic Models", to be presented in NeurIPS 2019.
 
+## Dependencies
 
-## Models
+## Example
+
+## Other
+
+### Models
 We have included the ACs used in our experiments, trained using the LearnPsdd algorithm introduced in <sup>[1](#myfootnote1)</sup>
 
-## Datasets
+### Datasets
 For reproducibility, we have included the binarized and randomly split classification datasets used for the experiments: banknote<sup>[2](#myfootnote2)</sup>, HAR<sup>[3](#myfootnote3)</sup>, HAR_multiclass<sup>[3](#myfootnote3)</sup> ,houses<sup>[4](#myfootnote4)</sup> ,madelone <sup>[5](#myfootnote5)</sup> and wilt<sup>[6](#myfootnote6)</sup>. Density estimation datasets NLTCS and Jester were taken from https://github.com/UCLA-StarAI/Density-Estimation-Datasets, and introduced in<sup>[7](#myfootnote7)</sup>.
 
-
+### References
 <a name="myfootnote1">1</a>: Liang, Yitao, Jessa Bekker, and Guy Van den Broeck. "Learning the structure of probabilistic sentential decision diagrams." Proceedings of the 33rd Conference on Uncertainty in Artificial Intelligence (UAI). 2017.
 
 <a name="myfootnote2">2</a>: Dua, D. and Graff, C. (2019). UCI Machine Learning Repository. Irvine, CA: University of California, School of Information and Computer Science. 
