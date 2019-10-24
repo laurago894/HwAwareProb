@@ -287,62 +287,62 @@ def convert_psdd(inputFile,model_num,benchmark_name):
     [indicator_dict.pop(em) for em in empty]
 
 
-    out_dir='models/' + benchmark_name + '/ac/'
+    out_dir='./models/' + benchmark_name + '/ac/'
 
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
 
-    fname_ac=out_dir + 'psdd_ac_'+ model_num +'.txt'
+        fname_ac=out_dir + 'psdd_ac_'+ model_num +'.txt'
 
-    fname_lmi = out_dir + 'lmap_ind_'+ model_num +'.txt'
-    fname_lmw = out_dir + 'lmap_we_'+ model_num +'.txt'
-    fname_lmt = out_dir + 'lmap_type_' + model_num + '.txt'
-    fname_lmb = out_dir + 'lmap_belong_' + model_num + '.txt'
+        fname_lmi = out_dir + 'lmap_ind_'+ model_num +'.txt'
+        fname_lmw = out_dir + 'lmap_we_'+ model_num +'.txt'
+        fname_lmt = out_dir + 'lmap_type_' + model_num + '.txt'
+        fname_lmb = out_dir + 'lmap_belong_' + model_num + '.txt'
 
-    fname_ind_dict = out_dir + 'indicator_dict_' + model_num + '.csv'
-    fname_lit_assign = out_dir + 'literal_assign_' + model_num + '.csv'
+        fname_ind_dict = out_dir + 'indicator_dict_' + model_num + '.csv'
+        fname_lit_assign = out_dir + 'literal_assign_' + model_num + '.csv'
 
-    print 'Writing ac models to ', out_dir
+        print 'Writing ac models to ', out_dir
 
-    with open(fname_ac,'w') as fac:
-        for ac in nodes:
-            fac.write(ac+'\n')
-    fac.close()
+        with open(fname_ac,'w') as fac:
+            for ac in nodes:
+                fac.write(ac+'\n')
+        fac.close()
 
-    with open(fname_lmi, 'w') as lm:
-        for acd in lmap_indeces:
-            lm.write(str(acd) + '\n')
-    lm.close()
+        with open(fname_lmi, 'w') as lm:
+            for acd in lmap_indeces:
+                lm.write(str(acd) + '\n')
+        lm.close()
 
-    with open(fname_lmw, 'w') as lm:
-        for acd in lmap_weights:
-            lm.write(str(acd) + '\n')
-    lm.close()
-
-
-    with open(fname_lmt, 'w') as lm:
-        for acd in lmap_type:
-            lm.write(str(acd) + '\n')
-    lm.close()
-
-    with open(fname_lmb, 'w') as lm:
-        for acd in lmap_belong:
-            lm.write(str(acd) + '\n')
-    lm.close()
+        with open(fname_lmw, 'w') as lm:
+            for acd in lmap_weights:
+                lm.write(str(acd) + '\n')
+        lm.close()
 
 
-    wid=csv.writer(open(fname_ind_dict,'w'))
-    for key,val in indicator_dict.items():
-        valst = ','.join([str(v) for v in val])
-        wid.writerow([key, valst])
+        with open(fname_lmt, 'w') as lm:
+            for acd in lmap_type:
+                lm.write(str(acd) + '\n')
+        lm.close()
 
-    was=csv.writer(open(fname_lit_assign,'w'))
-    for key,val in literal_assign.items():
-        valst=','.join([str(v) for v in val])
-        was.writerow([key,valst])
+        with open(fname_lmb, 'w') as lm:
+            for acd in lmap_belong:
+                lm.write(str(acd) + '\n')
+        lm.close()
 
 
-    return nodes,lmap_indeces,lmap_weights,lmap_type,lmap_belong,indicator_dict,literal_assign
+        wid=csv.writer(open(fname_ind_dict,'w'))
+        for key,val in indicator_dict.items():
+            valst = ','.join([str(v) for v in val])
+            wid.writerow([key, valst])
+
+        was=csv.writer(open(fname_lit_assign,'w'))
+        for key,val in literal_assign.items():
+            valst=','.join([str(v) for v in val])
+            was.writerow([key,valst])
+
+
+    return (nodes,lmap_indeces,lmap_weights,lmap_type,lmap_belong,indicator_dict,literal_assign)
 
 
 ########################## Generate a lmap (needed when pruning)
