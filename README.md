@@ -3,7 +3,24 @@ Repository for the paper "Towards Hardware-Aware Tractable Learning of Probabili
 
 ## Dependencies
 
+* Python 2.7 (code soon to be updated for Python 3)
+
+## Usage and options
+
+The goal is to find the Pareto optimal set of configurations in the accuracy vs hardware-cost space by scaling tunable system properties. The properties to consider can be given as options as follows:
+
+* -ms: Scale model complexity
+* -csi: Scale sensor interfaces (prune features, sensors and simplify model)
+* -ps: Scale precision
+* -csi: Consider featuse and sensor cost
+
 ## Example
+
+For the HAR benchmark, for which sensor and feature costs are available, following the full scaling pipeline (model complexity scaling - sensor interfaces scale - precision scale):
+
+```
+python hwopt.py HAR -models 10,22,38  -ms -ps -csi 
+```
 
 ## Other
 
