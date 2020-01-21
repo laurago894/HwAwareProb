@@ -12,14 +12,14 @@ The goal is to find the Pareto optimal set of configurations in the accuracy vs 
 * -ms: Scale model complexity
 * -csi: Scale sensor interfaces (prune features, sensors and simplify model)
 * -ps: Scale precision
-* -csi: Consider featuse and sensor cost
+
 
 ## Example
 
-For the HAR benchmark, for which sensor and feature costs are available, following the full scaling pipeline (model complexity scaling - sensor interfaces scale - precision scale):
+For the _banknote_ benchmark, following the full scaling pipeline (model complexity scaling - sensor interfaces scale - precision scale), starting from models 11,22 and 38:
 
 ```
-python hwopt.py HAR -models 10,22,38  -ms -ps -csi 
+python hwopt.py HAR -models 10,22,38  -ms -ps -csi
 ```
 
 ## Other
