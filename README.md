@@ -19,7 +19,7 @@ The goal is to find the Pareto optimal set of configurations in the accuracy vs 
 For the _banknote_ benchmark, following the full scaling pipeline (model complexity scaling - sensor interfaces scale - precision scale), starting from models 11,22 and 38:
 
 ```
-python hwopt.py HAR -models 10,22,38  -ms -ps -csi
+python hwopt.py banknote -models 10,22,38  -ms -ps -csi
 ```
 
 ## Other
